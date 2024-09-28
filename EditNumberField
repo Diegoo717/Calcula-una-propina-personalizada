@@ -1,0 +1,20 @@
+@Composable
+fun EditNumberField(
+    @StringRes label: Int,
+    @DrawableRes leadingIcon: Int,
+    keyboardOptions: KeyboardOptions,
+    value: String,
+    onValueChanged: (String) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    TextField(
+        value = value,
+        onValueChange = onValueChanged,
+        label = { Text(stringResource(label)) },
+        leadingIcon = { Icon(painter = painterResource(id = leadingIcon), contentDescription = null) },
+        keyboardOptions = keyboardOptions,
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(8.dp)
+    )
+}
